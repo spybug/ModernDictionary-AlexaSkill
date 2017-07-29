@@ -49,7 +49,8 @@ exports.handler = (event, context) => {
                         });
                         break;
 
-                    case 'AMAZON.StopIntent' || 'AMAZON.CancelIntent':
+                    case 'AMAZON.CancelIntent':
+                    case 'AMAZON.StopIntent':
                         context.succeed(
                             generateResponse(
                                 buildSpeechletResponse("Goodbye", true),
