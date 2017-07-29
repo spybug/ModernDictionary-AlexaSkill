@@ -49,7 +49,7 @@ exports.handler = (event, context) => {
                         });
                         break;
 
-                    case 'AMAZON.StopIntent' || 'StopIntent':
+                    case 'AMAZON.StopIntent' || 'AMAZON.CancelIntent':
                         context.succeed(
                             generateResponse(
                                 buildSpeechletResponse("Goodbye", true),
@@ -58,7 +58,7 @@ exports.handler = (event, context) => {
                         );
                         break;
 
-                    case 'AMAZON.HelpIntent' || 'HelpIntent':
+                    case 'AMAZON.HelpIntent':
                         context.succeed(
                             generateResponse(
                                 buildSpeechletResponse("Modern Dictionary gives modern day definitions to words and phrases. To hear one, please ask Modern Dictionary for a random word now.", false),
