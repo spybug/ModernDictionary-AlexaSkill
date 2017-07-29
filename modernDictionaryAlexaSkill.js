@@ -1,5 +1,7 @@
 var https = require('https');
-var appID = "APP_ID_HERE";
+var appID = process.env['app_ID'];
+
+console.log(appID);
 
 exports.handler = (event, context) => {
 
@@ -16,7 +18,7 @@ exports.handler = (event, context) => {
                 console.log('LAUNCH REQUEST');
                 context.succeed(
                     generateResponse(
-                        buildSpeechletResponse('This skill will give you the defintions to words from Urban Dictionary. Please ask for the definition to a word.', false),
+                        buildSpeechletResponse('Modern Dictionary is a skill to learn new funny phrases and words by giving you the definition. Please ask for a random definition now or say stop to exit.', false),
                         {}
                     )
                 );
@@ -47,29 +49,22 @@ exports.handler = (event, context) => {
                         });
                         break;
 
-                    case 'GetDefinition':
-                        var term = event.request.intent.slots.word.value;
-                        endpoint = 'https://api.urbandictionary.com/v0/define?term=' + term;
-                        https.get(endpoint, (response) => {
-                            response.on('data', (chunk) => { body += chunk; });
-                            response.on('end', () => {
-                                var data = JSON.parse(body);
-                                var result = '';
-                                if (data.result_type != 'no_results') {
-                                    var definition = data.list[0].definition;
-                                    result = 'The defintion of ' + term + ' is: ' + definition + '.';
-                                }
-                                else {
-                                    result = 'Sorry, I could not find the definition to ' + term + '. Please try a different word.';
-                                }
-                                context.succeed(
-                                    generateResponse(
-                                        buildSpeechletResponse(result, true),
-                                        {}
-                                    )
-                                );
-                            });
-                        });
+                    case 'AMAZON.StopIntent' || 'StopIntent':
+                        context.succeed(
+                            generateResponse(
+                                buildSpeechletResponse("Goodbye", true),
+                                {}
+                            )
+                        );
+                        break;
+
+                    case 'AMAZON.HelpIntent' || 'HelpIntent':
+                        context.succeed(
+                            generateResponse(
+                                buildSpeechletResponse("Modern Dictionary gives modern day definitions to words and phrases. To hear one, please ask Modern Dictionary for a random word now.", false),
+                                {}
+                            )
+                        );
                         break;
                 }
                 break;
