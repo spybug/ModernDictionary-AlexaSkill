@@ -1,17 +1,8 @@
-GetDefinition definition of {word}
-GetDefinition what does {word} mean
-GetDefinition meaning of {word}
-GetDefinition for what {word} means
-GetDefinition what is the meaning of {word}
-
-GetRandomDefinition random definition
-GetRandomDefinition random word
-GetRandomDefinition random entry
-GetRandomDefinition random selection
-GetRandomDefinition randomly chosen definition
-GetRandomDefinition randomly chosen word
-GetRandomDefinition word at random
-GetRandomDefinition definition chosen randomly
-GetRandomDefinition definition chosen randomly
-GetRandomDefinition get a random word
-GetRandomDefinition get a random definition
+GetRandomDefinition to give me a {word}
+GetRandomDefinition a random {word}
+GetRandomDefinition get a random {word}
+GetRandomDefinition give me a random {word}
+GetRandomDefinition {word}
+GetRandomDefinition {word} at random
+GetRandomDefinition for a random {word}
+GetRandomDefinition random {word}

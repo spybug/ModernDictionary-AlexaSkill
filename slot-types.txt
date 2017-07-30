@@ -1,0 +1,7 @@
+WORDS:
+word
+words
+definition
+definitions
+define
+todays word
