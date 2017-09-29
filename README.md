@@ -1,6 +1,6 @@
 <h1> Skill Overview 
   <a href="https://www.amazon.com/Karl-I-Modern-Dictionary/dp/B074J3J9VJ">
-    <img src="https://i.imgur.com/rnLKFfs.png" width="150"> 
+    <img src="https://images-na.ssl-images-amazon.com/images/I/71RBStw6vSL._SL210_QL95_BG0,0,0,0_FMpng_.png" width="100"> 
   </a> 
 </h1>
 
